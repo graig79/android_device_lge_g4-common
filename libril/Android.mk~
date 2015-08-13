@@ -2,7 +2,7 @@
 
 ifeq ($(BOARD_PROVIDES_LIBRIL),true)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8994)
-ifeq ($(BOARD_VENDOR),lge)
+ifeq ($(BOARD_VENDOR),htc)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)

@@ -1,5 +1,5 @@
 #
-# System Properties for HTC One M9 (hima)
+# System Properties for H
 #
 
 # MTP and USB-OTG
@@ -54,7 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=480
+    ro.sf.lcd_density=640
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \

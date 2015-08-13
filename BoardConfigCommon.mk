@@ -13,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-BOARD_VENDOR := htc
+BOARD_VENDOR := lge
 
-LOCAL_PATH := device/htc/hima-common
+LOCAL_PATH := device/lge/g4-common
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/hima-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/lge/g4-common/include
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8994
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno430
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno418
 
 # CPU
 TARGET_ARCH := arm64
@@ -48,8 +48,8 @@ TARGET_NO_BOOTLOADER := true
 TARGET_USES_C2D_COMPOSITION := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/hima-common/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 androidboot.selinux=permissive androidusb.pid=0x065d androidkey.dummy=1 androidtouch.htc_event=1 disk_mode_enable=1
+BOARD_CUSTOM_BOOTIMG_MK := device/lge/g4-common/mkbootimg.mk
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 androidboot.selinux=permissive androidusb.pid=0x065d androidkey.dummy=1 disk_mode_enable=1
 BOARD_KERNEL_BASE := 0x00078000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x02000000
@@ -58,24 +58,24 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01f88000 --tags_offset 0x01d88000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/htc/msm8994
+TARGET_KERNEL_SOURCE := kernel/lge/g4
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4697620480
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 25232932864
+BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 41943040
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1073741824
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 2147483648
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/htc/hima-common/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/lge/g4-common/rootdir/etc/fstab.qcom
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-#BOARD_AUDIO_AMPLIFIER := device/htc/hima-common/libaudioamp
+#BOARD_AUDIO_AMPLIFIER := device/lge/g4-common/libaudioamp
 BOARD_SUPPORTS_SOUND_TRIGGER := false
 
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
@@ -101,7 +101,7 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/hima-common/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/g4-common/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := $(LOCAL_PATH)/bluetooth/libbt_vndcfg.txt
 
 # Wifi
@@ -121,13 +121,14 @@ BOARD_NFC_CHIPSET := pn547
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
-COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
-COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"htc.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0},'
+COMMON_GLOBAL_CFLAGS += -DLG_CAMERA_HARDWARE
+#COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{"lge.camera.sensor.", AID_CAMERA, 0}, {"camera.4k2k.", AID_MEDIA, 0},'
 
 # Display
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
+#TARGET_USES_NEW_ION_API :=true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
 
@@ -166,7 +167,7 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/lge/g4-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     cir_fw_update.te \
@@ -189,7 +190,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_HW_DISK_ENCRYPTION := false
 
 # CM Hardware
-BOARD_HARDWARE_CLASS := device/htc/hima-common/cmhw
+BOARD_HARDWARE_CLASS := device/lge/g4-common/cmhw
 
 # inherit from the proprietary version
--include vendor/htc/hima-common/BoardConfigVendor.mk
+-include vendor/lge/g4-common/BoardConfigVendor.mk

@@ -2,8 +2,8 @@
 
 set -e
 
-export VENDOR=htc
-export DEVICE=hima-common
+export VENDOR=lge
+export DEVICE=g4-common
 
 function extract() {
     for FILE in `egrep -v '(^#|^$)' $1`; do

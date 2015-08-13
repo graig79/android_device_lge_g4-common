@@ -2,8 +2,8 @@
 
 set -e
 
-export VENDOR=htc
-export DEVICE=hima-common
+export VENDOR=lge
+export DEVICE=g4-common
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
