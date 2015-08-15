@@ -15,6 +15,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 #	rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.ril_class=LgeLteRIL
+    
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
