@@ -17,7 +17,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=LgeLteRIL
-    
+
+#bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+	qcom.bluetooth.soc=rome \
+	ro.bluetooth.a4wp=false
+
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \

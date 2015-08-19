@@ -16,7 +16,8 @@
 
 # Inherit proprietary blobs
 $(call inherit-product-if-exists, vendor/lge/g4-common/g4-common-vendor.mk)
-
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -111,8 +112,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    bdAddrLoader
+#PRODUCT_PACKAGES += \
+#    bdAddrLoader
 
 # WiFi cal NVRAM file
 PRODUCT_COPY_FILES += \
