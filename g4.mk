@@ -71,10 +71,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
-    audio.primary.msm8994 \
+    audio.primary.msm8992 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8994 \
+    audio_policy.msm8992 \
     tinymix
 
 PRODUCT_PACKAGES += \
@@ -139,10 +139,10 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.msm8994 \
-    gralloc.msm8994 \
-    hwcomposer.msm8994 \
-    memtrack.msm8994 \
+    copybit.msm8992 \
+    gralloc.msm8992 \
+    hwcomposer.msm8992 \
+    memtrack.msm8992 \
     liboverlay
 
 # Filesystem management tools
@@ -153,18 +153,17 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8994
+    gps.msm8992
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/configs/gps/sec_config:system/etc/sec_config 
 
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8992.conf:system/etc/thermal-engine-8992.conf
-
-# IRSC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
 # Sensors
 PRODUCT_COPY_FILES += \
@@ -206,7 +205,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8994
+    lights.msm8992
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -242,7 +241,7 @@ PRODUCT_BOOT_JARS += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8994
+    power.msm8992
 
 # USB
 PRODUCT_PACKAGES += \
