@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_PACKAGES += \
 #    bdAddrLoader
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/config/ble_stack.conf:system/etc/bluetooth/ble_stack.conf
+	$(LOCAL_PATH)/configs/ble_stack.conf:system/etc/bluetooth/ble_stack.conf
 # WiFi cal NVRAM file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
