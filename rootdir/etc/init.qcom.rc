@@ -582,18 +582,6 @@ service start_hci_filter /system/bin/wcnss_filter
     group bluetooth qcom_diag net_bt_stack
     disabled
 
-service config_bluetooth /system/bin/sh /system/etc/init.qcom.bt.sh "onboot"
-    class core
-    user root
-    oneshot
-
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin
-    disabled
-    oneshot
-
 on property:bluetooth.hciattach=true
     start hciattach
 
